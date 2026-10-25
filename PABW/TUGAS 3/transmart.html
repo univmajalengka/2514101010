@@ -25,13 +25,9 @@ header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:18px 50px;dis
 section{padding:100px 60px}
 .section-title{font-family:'Playfair Display',serif;font-size:44px;text-align:center;margin-bottom:20px;background:linear-gradient(135deg,#d4af37,#f5e6a3,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .section-sub{text-align:center;color:#aaa;font-size:17px;margin-bottom:60px;font-weight:300;letter-spacing:2px}
-
-/* FILM CARD */
 .film-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:40px;max-width:1300px;margin:0 auto}
 .film-card{background:#1a1a1a;border-radius:20px;overflow:hidden;transition:.5s;border:1px solid rgba(212,175,55,.2)}
 .film-card:hover{transform:translateY(-12px);border-color:#d4af37;box-shadow:0 25px 60px rgba(212,175,55,.3)}
-
-/* VIDEO TRAILER (autoplay, loop, muted) */
 .trailer-video{position:relative;width:100%;height:220px;background:#000;overflow:hidden}
 .trailer-video video{width:100%;height:100%;object-fit:cover;display:block}
 .trailer-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.7) 100%);pointer-events:none}
@@ -41,8 +37,6 @@ section{padding:100px 60px}
 .trailer-rating{position:absolute;top:15px;right:15px;background:rgba(0,0,0,.85);color:#d4af37;padding:6px 14px;border-radius:50px;font-weight:700;font-size:13px;z-index:3;border:1px solid rgba(212,175,55,.4)}
 .trailer-mute{position:absolute;bottom:15px;right:15px;background:rgba(0,0,0,.7);color:#d4af37;padding:8px 12px;border-radius:50%;font-size:14px;z-index:3;border:1px solid rgba(212,175,55,.4);cursor:pointer;transition:.3s}
 .trailer-mute:hover{background:#d4af37;color:#0a0a0a}
-
-/* POSTER + INFO FILM */
 .film-content{display:flex;gap:20px;padding:25px;align-items:flex-start}
 .film-poster{width:110px;height:160px;border-radius:12px;background-size:cover;background-position:center;flex-shrink:0;border:2px solid rgba(212,175,55,.4);box-shadow:0 8px 25px rgba(0,0,0,.5);transition:.4s}
 .film-card:hover .film-poster{transform:scale(1.05);box-shadow:0 12px 35px rgba(212,175,55,.3)}
@@ -57,8 +51,6 @@ section{padding:100px 60px}
 .film-price small{font-size:12px;color:#888}
 .btn-ticket{width:100%;padding:14px;background:linear-gradient(135deg,#d4af37,#b8960f);color:#0a0a0a;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;cursor:pointer;transition:.3s;text-transform:uppercase;margin-top:20px}
 .btn-ticket:hover{transform:scale(1.02);box-shadow:0 0 30px rgba(212,175,55,.6)}
-
-/* ULASAN */
 .review-box{margin-top:20px;padding:18px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.15);border-radius:15px}
 .review-box-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .review-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;color:#d4af37;font-size:20px;flex-shrink:0}
@@ -67,7 +59,6 @@ section{padding:100px 60px}
 .review-text{color:#bbb;font-size:13px;line-height:1.6;font-style:italic;margin-bottom:14px;padding-left:12px;border-left:2px solid rgba(212,175,55,.3)}
 .review-photo{width:100%;height:180px;border-radius:12px;background-size:cover;background-position:center;border:1px solid rgba(212,175,55,.2);position:relative;overflow:hidden}
 .review-photo-label{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.7);color:#d4af37;padding:4px 12px;border-radius:20px;font-size:11px;letter-spacing:1px;border:1px solid rgba(212,175,55,.4)}
-
 footer{background:#050505;border-top:1px solid rgba(212,175,55,.2);text-align:center;padding:40px 20px;color:#666;font-size:14px}
 footer i{color:#d4af37;margin:0 5px}
 @media (max-width:768px){
@@ -87,7 +78,7 @@ section{padding:70px 20px}
 
 <header>
 <div class="logo"><i class="fas fa-crown"></i> CIREBON CITY</div>
-<a href="index.html" class="back-btn" onclick="goBack(event)"><i class="fas fa-arrow-left"></i> Kembali</a>
+<a href="tugas.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
 </header>
 
 <div class="hero">
@@ -103,7 +94,6 @@ section{padding:70px 20px}
 
 <div class="film-grid">
 
-<!-- Spider-Man Brand New Day -->
 <div class="film-card">
 <div class="trailer-video">
 <span class="trailer-label"><i class="fas fa-circle"></i> Trailer</span>
@@ -130,7 +120,7 @@ Browser Anda tidak mendukung video.
 </div>
 </div>
 <div style="padding:0 25px 25px">
-<button class="btn-ticket" onclick="alert('Tiket Spider-Man: Brand New Day dipesan!')">Beli Tiket</button>
+<button class="btn-ticket" onclick="beli('film', 1, 'Spider-Man: Brand New Day', 50000)">Beli Tiket</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -147,7 +137,6 @@ Browser Anda tidak mendukung video.
 </div>
 </div>
 
-<!-- Ghost in the Cell -->
 <div class="film-card">
 <div class="trailer-video">
 <span class="trailer-label"><i class="fas fa-circle"></i> Trailer</span>
@@ -174,7 +163,7 @@ Browser Anda tidak mendukung video.
 </div>
 </div>
 <div style="padding:0 25px 25px">
-<button class="btn-ticket" onclick="alert('Tiket Ghost in the Cell dipesan!')">Beli Tiket</button>
+<button class="btn-ticket" onclick="beli('film', 2, 'Ghost in the Cell', 50000)">Beli Tiket</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -191,7 +180,6 @@ Browser Anda tidak mendukung video.
 </div>
 </div>
 
-<!-- Kimetsu no Yaiba Infinity Castle -->
 <div class="film-card">
 <div class="trailer-video">
 <span class="trailer-label"><i class="fas fa-circle"></i> Trailer</span>
@@ -218,7 +206,7 @@ Browser Anda tidak mendukung video.
 </div>
 </div>
 <div style="padding:0 25px 25px">
-<button class="btn-ticket" onclick="alert('Tiket Kimetsu no Yaiba: Infinity Castle dipesan!')">Beli Tiket</button>
+<button class="btn-ticket" onclick="beli('film', 3, 'Kimetsu no Yaiba: Infinity Castle', 55000)">Beli Tiket</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -243,22 +231,35 @@ Browser Anda tidak mendukung video.
 </footer>
 
 <script>
-function goBack(e){
-  e.preventDefault();
-  window.location.href = 'index.html';
+function beli(tipe, id, nama, harga) {
+    const fd = new FormData();
+    fd.append('tipe', tipe);
+    fd.append('ref_id', id);
+    fd.append('nama', nama);
+    fd.append('harga', harga);
+    fd.append('jumlah', 1);
+    fetch('proses_beli.php', { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(d => {
+        if (d.status === 'sukses') {
+            alert('✅ Pesanan berhasil!\n\nID: #' + d.id + '\nItem: ' + d.nama + '\nTotal: Rp ' + d.total.toLocaleString('id-ID') + '\n\nData tersimpan di database!');
+        } else {
+            alert('❌ Gagal: ' + d.pesan);
+        }
+    })
+    .catch(e => alert('Error: ' + e));
 }
 
-/* Tombol mute/unmute video */
 function toggleMute(btn){
-  const video = btn.parentElement.querySelector('video');
-  const icon = btn.querySelector('i');
-  if(video.muted){
-    video.muted = false;
-    icon.className = 'fas fa-volume-up';
-  } else {
-    video.muted = true;
-    icon.className = 'fas fa-volume-mute';
-  }
+    const video = btn.parentElement.querySelector('video');
+    const icon = btn.querySelector('i');
+    if(video.muted){
+        video.muted = false;
+        icon.className = 'fas fa-volume-up';
+    } else {
+        video.muted = true;
+        icon.className = 'fas fa-volume-mute';
+    }
 }
 </script>
 
