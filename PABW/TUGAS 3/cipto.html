@@ -40,8 +40,6 @@ section{padding:100px 60px}
 .menu-price small{font-size:13px;color:#888}
 .btn-order{width:100%;padding:14px;background:transparent;border:2px solid #d4af37;color:#d4af37;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;cursor:pointer;transition:.3s;text-transform:uppercase}
 .btn-order:hover{background:#d4af37;color:#0a0a0a;box-shadow:0 0 30px rgba(212,175,55,.6)}
-
-/* ULASAN */
 .review-box{margin-top:22px;padding:20px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.15);border-radius:15px}
 .review-box-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .review-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;color:#d4af37;font-size:20px;flex-shrink:0}
@@ -66,7 +64,7 @@ section{padding:70px 20px}
 
 <header>
 <div class="logo"><i class="fas fa-crown"></i> CIREBON CITY</div>
-<a href="index.html" class="back-btn" onclick="goBack(event)"><i class="fas fa-arrow-left"></i> Kembali</a>
+<a href="tugas.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
 </header>
 
 <div class="hero">
@@ -87,7 +85,6 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 
 <div class="menu-grid">
 
-<!-- SUSHI -->
 <div class="menu-card">
 <div class="menu-img" style="background-image:url('500EFFD0-3B65-408D-B0BD-0263D8336A8C_1_105_c.jpeg');">
 <span class="menu-badge">Best Seller</span>
@@ -96,7 +93,7 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 <h3>Sushi</h3>
 <p class="desc">Sushi premium dengan topping salmon segar, nasi pulen, dan wasabi pilihan. Disajikan dengan kecap asin khas Jepang.</p>
 <div class="menu-price">Rp 55.000 <small>/porsi</small></div>
-<button class="btn-order" onclick="alert('Sushi ditambahkan!')">Pesan</button>
+<button class="btn-order" onclick="beli('produk', 5, 'Sushi', 55000)">Pesan</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -113,7 +110,6 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 </div>
 </div>
 
-<!-- KARAGE -->
 <div class="menu-card">
 <div class="menu-img" style="background-image:url('9E0FDD07-1ECD-4191-8DFC-CBEB51AA6690_4_5005_c.jpeg');">
 <span class="menu-badge">Favorit</span>
@@ -122,7 +118,7 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 <h3>Karage</h3>
 <p class="desc">Ayam goreng khas Jepang dengan balutan tepung renyah dan bumbu gurih. Disajikan dengan saus spesial.</p>
 <div class="menu-price">Rp 40.000 <small>/porsi</small></div>
-<button class="btn-order" onclick="alert('Karage ditambahkan!')">Pesan</button>
+<button class="btn-order" onclick="beli('produk', 6, 'Karage', 40000)">Pesan</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -139,7 +135,6 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 </div>
 </div>
 
-<!-- RAMEN -->
 <div class="menu-card">
 <div class="menu-img" style="background-image:url('91ECE06D-957F-4227-B165-85A20BA4FE66_4_5005_c.jpeg');">
 <span class="menu-badge">Signature</span>
@@ -148,7 +143,7 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 <h3>Ramen</h3>
 <p class="desc">Ramen dengan kuah kaldu kaya rasa, mie kenyal, telur setengah matang, dan topping chashu lembut.</p>
 <div class="menu-price">Rp 60.000 <small>/porsi</small></div>
-<button class="btn-order" onclick="alert('Ramen ditambahkan!')">Pesan</button>
+<button class="btn-order" onclick="beli('produk', 7, 'Ramen', 60000)">Pesan</button>
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -173,9 +168,23 @@ Cipto memiliki banyak sekali pilihan makanan seperti ayam, kangkung, dan lainnya
 </footer>
 
 <script>
-function goBack(e){
-  e.preventDefault();
-  window.location.href = 'index.html';
+function beli(tipe, id, nama, harga) {
+    const fd = new FormData();
+    fd.append('tipe', tipe);
+    fd.append('ref_id', id);
+    fd.append('nama', nama);
+    fd.append('harga', harga);
+    fd.append('jumlah', 1);
+    fetch('proses_beli.php', { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(d => {
+        if (d.status === 'sukses') {
+            alert('✅ Pesanan berhasil!\n\nID: #' + d.id + '\nItem: ' + d.nama + '\nTotal: Rp ' + d.total.toLocaleString('id-ID') + '\n\nData tersimpan di database!');
+        } else {
+            alert('❌ Gagal: ' + d.pesan);
+        }
+    })
+    .catch(e => alert('Error: ' + e));
 }
 </script>
 
