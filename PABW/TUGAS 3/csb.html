@@ -40,8 +40,6 @@ section{padding:100px 60px}
 .product-price small{font-size:13px;color:#888}
 .btn-buy{width:100%;padding:14px;background:linear-gradient(135deg,#d4af37,#b8960f);color:#0a0a0a;border:none;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;cursor:pointer;transition:.3s;text-transform:uppercase}
 .btn-buy:hover{transform:scale(1.03);box-shadow:0 0 30px rgba(212,175,55,.6)}
-
-/* ===== ULASAN ===== */
 .review-box{margin-top:22px;padding:20px;background:rgba(255,255,255,.02);border:1px solid rgba(212,175,55,.15);border-radius:15px}
 .review-box-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .review-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.06);border:2px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;color:#d4af37;font-size:20px;flex-shrink:0}
@@ -68,7 +66,7 @@ section{padding:70px 20px}
 
 <header>
 <div class="logo"><i class="fas fa-crown"></i> CIREBON CITY</div>
-<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
+<a href="tugas.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
 </header>
 
 <div class="hero">
@@ -88,7 +86,6 @@ section{padding:70px 20px}
 
 <div class="product-grid">
 
-<!-- Produk 1 -->
 <div class="product-card">
 <div class="product-img" style="background-image:url('659C530B-691B-4A93-85A7-836336F7F1E7_1_201_a.jpeg');">
 <span class="product-badge">Limited Edition</span>
@@ -97,9 +94,8 @@ section{padding:70px 20px}
 <h3>Uniqlo x Yoasobi T-Shirt</h3>
 <p class="desc">Kaos edisi khusus kolaborasi Uniqlo dengan Yoasobi. Desain eksklusif dengan bahan katun premium yang nyaman dipakai.</p>
 <div class="product-price">Rp 199.000 <small>/pcs</small></div>
-<button class="btn-buy" onclick="alert('Uniqlo x Yoasobi T-Shirt ditambahkan!')">Beli Sekarang</button>
+<button class="btn-buy" onclick="beli('produk', 1, 'Uniqlo x Yoasobi T-Shirt', 199000)">Beli Sekarang</button>
 
-<!-- Ulasan -->
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -117,7 +113,6 @@ section{padding:70px 20px}
 </div>
 </div>
 
-<!-- Produk 2 -->
 <div class="product-card">
 <div class="product-img" style="background-image:url('IMG_5769.jpg');">
 <span class="product-badge">Limited Edition</span>
@@ -126,9 +121,8 @@ section{padding:70px 20px}
 <h3>Uniqlo x Les Misérables T-Shirt</h3>
 <p class="desc">Kaos eksklusif kolaborasi Uniqlo dengan Les Misérables. Desain artistik yang menggambarkan kisah klasik legendaris.</p>
 <div class="product-price">Rp 199.000 <small>/pcs</small></div>
-<button class="btn-buy" onclick="alert('Uniqlo x Les Misérables T-Shirt ditambahkan!')">Beli Sekarang</button>
+<button class="btn-buy" onclick="beli('produk', 2, 'Uniqlo x Les Misérables T-Shirt', 199000)">Beli Sekarang</button>
 
-<!-- Ulasan -->
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -161,7 +155,6 @@ section{padding:70px 20px}
 
 <div class="product-grid">
 
-<!-- MacBook 256 -->
 <div class="product-card">
 <div class="product-img" style="background-image:url('A58D6878-8847-434C-A46F-D39D9DC263DD_1_102_a.jpeg');">
 <span class="product-badge">256 GB</span>
@@ -170,9 +163,8 @@ section{padding:70px 20px}
 <h3>MacBook Neo 256 GB</h3>
 <p class="desc">MacBook Neo varian 256 GB dengan chip generasi terbaru. Layar Retina Liquid XDR dan performa luar biasa untuk kebutuhan sehari-hari.</p>
 <div class="product-price">Rp 12.999.000 <small>/unit</small></div>
-<button class="btn-buy" onclick="alert('MacBook Neo 256 GB ditambahkan!')">Beli Sekarang</button>
+<button class="btn-buy" onclick="beli('produk', 3, 'MacBook Neo 256 GB', 12999000)">Beli Sekarang</button>
 
-<!-- Ulasan -->
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -190,7 +182,6 @@ section{padding:70px 20px}
 </div>
 </div>
 
-<!-- MacBook 512 -->
 <div class="product-card">
 <div class="product-img" style="background-image:url('B599C565-70D9-49C5-8001-AD40C932B2C9_1_201_a.heic');">
 <span class="product-badge">512 GB</span>
@@ -199,9 +190,8 @@ section{padding:70px 20px}
 <h3>MacBook Neo 512 GB</h3>
 <p class="desc">MacBook Neo varian 512 GB dengan ruang penyimpanan lebih luas. Cocok untuk produktivitas tinggi dan penyimpanan file besar.</p>
 <div class="product-price">Rp 15.250.000 <small>/unit</small></div>
-<button class="btn-buy" onclick="alert('MacBook Neo 512 GB ditambahkan!')">Beli Sekarang</button>
+<button class="btn-buy" onclick="beli('produk', 4, 'MacBook Neo 512 GB', 15250000)">Beli Sekarang</button>
 
-<!-- Ulasan -->
 <div class="review-box">
 <div class="review-box-header">
 <div class="review-avatar"><i class="fas fa-user"></i></div>
@@ -225,6 +215,27 @@ section{padding:70px 20px}
 <footer>
 <p>&copy; 2026 CSB Mall - Cirebon City. <i class="fas fa-crown"></i> Dibuat dengan kemewahan.</p>
 </footer>
+
+<script>
+function beli(tipe, id, nama, harga) {
+    const fd = new FormData();
+    fd.append('tipe', tipe);
+    fd.append('ref_id', id);
+    fd.append('nama', nama);
+    fd.append('harga', harga);
+    fd.append('jumlah', 1);
+    fetch('proses_beli.php', { method: 'POST', body: fd })
+    .then(r => r.json())
+    .then(d => {
+        if (d.status === 'sukses') {
+            alert('✅ Pesanan berhasil!\n\nID: #' + d.id + '\nItem: ' + d.nama + '\nTotal: Rp ' + d.total.toLocaleString('id-ID') + '\n\nData tersimpan di database!');
+        } else {
+            alert('❌ Gagal: ' + d.pesan);
+        }
+    })
+    .catch(e => alert('Error: ' + e));
+}
+</script>
 
 </body>
 </html>
